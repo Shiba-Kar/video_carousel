@@ -1,16 +1,24 @@
-# example
+# Video Carousel
 
-A new Flutter project.
+This package provides a simple and customizable way to create a video carousel in Flutter. It allows you to display a list of video files in a carousel format, with options for autoplay and custom tap actions.
 
-## Getting Started
+## Installation
 
-This project is a starting point for a Flutter application.
+To use this package, add `video_carousel` as a [dependency in your pubspec.yaml file](https://flutter.dev/docs/development/packages-and-plugins/using-packages).
 
-A few resources to get you started if this is your first Flutter project:
+```yaml
+dependencies:
+    video_carousel: ^version_number
+```
+```dart
+import 'package:video_carousel/video_carousel.dart';
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+VideoCarousel(
+    files: ['assets/video1.mp4', 'assets/video2.mp4', 'assets/video3.mp4'],
+    onTap: (index) {
+        print('Tapped on video $index');
+    },
+    autoPlay: true,
+)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```

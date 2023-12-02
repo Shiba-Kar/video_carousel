@@ -20,13 +20,13 @@ class VideoCarousel extends StatefulWidget {
   /// The [height] parameter specifies the height of the carousel.
   /// The [onTap] parameter is a callback function that is called when a video is tapped.
   /// The [autoPlay] parameter specifies whether the videos should autoplay.
-  const VideoCarousel({
+  VideoCarousel({
     super.key,
     required this.files,
     this.onTap,
     this.height = 400,
     this.autoPlay = false,
-  });
+  }) : assert(files.isNotEmpty, 'Files list cannot be empty');
 
   @override
   State<VideoCarousel> createState() => _VideoCarouselState();
