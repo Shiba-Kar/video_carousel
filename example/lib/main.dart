@@ -35,9 +35,9 @@ class _MyAppState extends State<MyApp> {
   _init() async {
     var fs = await Future.wait([
       createFileFromAsset('assets/1.mp4'),
-      createFileFromAsset('assets/2.mp4'),
-      createFileFromAsset('assets/3.mp4'),
-      createFileFromAsset('assets/4.mp4')
+      createFileFromAsset('assets/1.mp4'),
+      createFileFromAsset('assets/1.mp4'),
+      createFileFromAsset('assets/1.mp4')
     ]);
 
     files.addAll(fs);
