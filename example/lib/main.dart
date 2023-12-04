@@ -59,7 +59,7 @@ class _MyAppState extends State<MyApp> {
             ? Center(child: CircularProgressIndicator())
             : ListView(
                 children: [
-                  VideoCarousel(files: files),
+                  VideoCarousel(files: files, autoPlay: false),
                   const SizedBox(height: 200),
                   VideoCarousel(files: files),
                 ],

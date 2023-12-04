@@ -10,9 +10,9 @@ import 'package:video_player/video_player.dart';
 /// A widget that displays a carousel of videos.
 class VideoCarousel extends StatefulWidget {
   final List<File> files;
-  final double? height;
+  final double height;
   final Function(File file)? onTap;
-  final bool? autoPlay;
+  final bool autoPlay;
 
   /// Creates a [VideoCarousel] widget.
   ///
@@ -25,7 +25,7 @@ class VideoCarousel extends StatefulWidget {
     required this.files,
     this.onTap,
     this.height = 400,
-    this.autoPlay = false,
+    this.autoPlay = true,
   }) : assert(files.isNotEmpty, 'Files list cannot be empty');
 
   @override
@@ -34,7 +34,7 @@ class VideoCarousel extends StatefulWidget {
 
 class _VideoCarouselState extends State<VideoCarousel> {
   final List<GlobalKey<VideoScreenState>> keys = [];
-  bool autoplay = false;
+  late bool autoplay;
   final CarouselController _carouselController = CarouselController();
 
   @override
@@ -82,8 +82,10 @@ class _VideoCarouselState extends State<VideoCarousel> {
       onVisibilityChanged: (visibilityInfo) {
         var visiblePercentage = visibilityInfo.visibleFraction * 100;
         if (visiblePercentage == 100.0) {
-          autoplay = true;
-          setState(() {});
+          if (widget.autoPlay) {
+            autoplay = true;
+            setState(() {});
+          }
         } else {
           if (mounted) {
             autoplay = false;
