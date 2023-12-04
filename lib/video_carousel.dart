@@ -53,7 +53,7 @@ class _VideoCarouselState extends State<VideoCarousel> {
       (index) => GlobalKey<VideoScreenState>(
           debugLabel: "$index ${_carouselController.hashCode}"),
     ));
-    autoplay = widget.autoPlay!;
+    autoplay = widget.autoPlay;
     super.initState();
   }
 

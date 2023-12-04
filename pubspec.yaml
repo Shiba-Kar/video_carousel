@@ -1,6 +1,6 @@
 name: video_carousel
 description: Carousel Video Widget. A Flutter package for iOS and Android and MacOS for playing video on a Carousel Widget.
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/Shiba-Kar/video_carousel.git
 
 environment:

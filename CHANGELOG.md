@@ -11,3 +11,7 @@ Improved docs
 ## 0.0.3
 
 Improved docs
+
+## 0.0.4
+
+Autoplay fix
